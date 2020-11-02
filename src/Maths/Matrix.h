@@ -18,4 +18,6 @@ glm::mat4 makeViewMatrix(const Camera& camera);
 // 生成投影矩阵
 glm::mat4 makeProjectionMatrix(float fov);
 
+glm::mat4 makeModelMatrix(const glm::vec3& position, const glm::vec3& rotation);
+
 #endif //MINECRAFT_YISHIYU_EDITION_MATRIX_H

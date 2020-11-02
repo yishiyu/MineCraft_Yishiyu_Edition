@@ -6,7 +6,7 @@
 
 #include "../Util/FileUtil.h"
 
-#include <GL/glew.h>
+#include <glad/glad.h>
 #include <stdexcept>
 
 namespace {
@@ -42,8 +42,8 @@ namespace {
 
 GLuint loadShaders(const std::string &vertexShader,
                    const std::string &fragmentShader) {
-    auto vertexSource = getFileContents("Shaders/" + vertexShader + ".glsl");
-    auto fragmentSource = getFileContents("Shaders/" + fragmentShader + ".glsl");
+    auto vertexSource = getFileContents("../Shaders/" + vertexShader + ".glsl");
+    auto fragmentSource = getFileContents("../Shaders/" + fragmentShader + ".glsl");
 
     auto vertexShaderID = compileShader(vertexSource.c_str(), GL_VERTEX_SHADER);
     auto fragmentShaderID = compileShader(fragmentSource.c_str(), GL_FRAGMENT_SHADER);

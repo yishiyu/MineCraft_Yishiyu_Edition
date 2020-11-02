@@ -7,6 +7,7 @@
 #include <iostream>
 
 #include "../Camera.h"
+#include "../Maths/Matrix.h"
 
 QuadRenderer::QuadRenderer() {
     m_basicTexture.loadFromFile("test");
@@ -43,7 +44,7 @@ void QuadRenderer::renderQuads(const Camera &camera) {
 
 
     for (auto &quad : m_quads) {
-        ///@TODO: uniform
+        m_shader.loadModelMatrix(makeModelMatrix(quad, {0, 0, 0}));
         glDrawElements(GL_TRIANGLES, m_quadModel.getIndicesCount(), GL_UNSIGNED_INT, nullptr);
     }
 

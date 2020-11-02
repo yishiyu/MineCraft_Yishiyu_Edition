@@ -12,6 +12,7 @@
 #include "Renderer/RenderMaster.h"
 
 #include "Context.h"
+#include "Camera.h"
 
 class Application {
 public:
@@ -37,6 +38,7 @@ private:
 
 
     bool m_isPopState = false;
+    Camera m_camera;
 };
 
 

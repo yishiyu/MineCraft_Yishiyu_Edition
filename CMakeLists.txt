@@ -15,7 +15,7 @@ link_directories(site-packages/libs/GL site-packages/libs/SFML)
 add_executable(MineCraft_Yishiyu_Edition
         src/Main.cpp src/Maths/glm.h
         src/Context.cpp src/Context.h
-        src/States/StateBase.h
+        src/States/StateBase.h src/glad.c
         src/Maths/Matrix.cpp src/Maths/Matrix.h
         src/Util/NonCopyable.h src/Util/Singleton.h
         src/Util/Random.cpp src/Util/Random.h
@@ -29,7 +29,7 @@ add_executable(MineCraft_Yishiyu_Edition
         src/Shaders/Shader.cpp src/Shaders/Shader.h
         src/Shaders/ShaderLoader.cpp src/Shaders/ShaderLoader.h
         src/Renderer/RenderMaster.cpp src/Renderer/RenderMaster.h
-        src/Renderer/QuadRenderer.cpp src/Renderer/QuadRenderer.h)
+        src/Renderer/QuadRenderer.cpp src/Renderer/QuadRenderer.h src/Player/Player.h src/Entity.h)
 
 # 链接库文件
 if (CMAKE_BUILD_TYPE MATCHES "Release")
@@ -37,7 +37,6 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
 
     target_link_libraries(
             MineCraft_Yishiyu_Edition
-            glew32.lib
             libsfml-audio.a
             libsfml-graphics.a
             libsfml-network.a
@@ -51,7 +50,6 @@ elseif (CMAKE_BUILD_TYPE MATCHES "Debug")
 
     target_link_libraries(
             MineCraft_Yishiyu_Edition
-            glew32.lib
             libsfml-audio-d.a
             libsfml-graphics-d.a
             libsfml-network-d.a

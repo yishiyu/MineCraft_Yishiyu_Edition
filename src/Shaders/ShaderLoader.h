@@ -6,7 +6,7 @@
 #define MINECRAFT_YISHIYU_EDITION_SHADERLOADER_H
 
 #include <string>
-#include <GL/glew.h>
+#include <glad/glad.h>
 
 GLuint loadShaders(const std::string &vertexShader,
                    const std::string &fragmentShader);

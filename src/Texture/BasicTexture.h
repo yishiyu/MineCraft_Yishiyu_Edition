@@ -5,7 +5,7 @@
 #ifndef MINECRAFT_YISHIYU_EDITION_BASICTEXTURE_H
 #define MINECRAFT_YISHIYU_EDITION_BASICTEXTURE_H
 
-#include <GL/glew.h>
+#include <glad/glad.h>
 #include <string>
 
 #include "../Util/NonCopyable.h"

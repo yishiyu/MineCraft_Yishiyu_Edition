@@ -14,7 +14,7 @@ BasicTexture::BasicTexture(const std::string& file)
 void BasicTexture::loadFromFile(const std::string& file)
 {
     sf::Image i;
-    if(!i.loadFromFile("Res/Textures/" + file + ".png"))
+    if(!i.loadFromFile("../Res/Textures/" + file + ".png"))
     {
         ///@TODO Throw error
     }

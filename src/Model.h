@@ -5,7 +5,7 @@
 #ifndef MINECRAFT_YISHIYU_EDITION_MODEL_H
 #define MINECRAFT_YISHIYU_EDITION_MODEL_H
 
-#include <GL/glew.h>
+#include <glad/glad.h>
 #include <vector>
 
 #include "Util/NonCopyable.h"

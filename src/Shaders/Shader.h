@@ -6,7 +6,7 @@
 #define MINECRAFT_YISHIYU_EDITION_SHADER_H
 
 #include <string>
-#include <GL/glew.h>
+#include <glad/glad.h>
 
 #include "../Maths/glm.h"
 

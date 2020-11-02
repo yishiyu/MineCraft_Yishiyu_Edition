@@ -7,7 +7,7 @@
 #include <sstream>
 #include <stdexcept>
 
-std::string FileUtil::getFileContents(const std::string &filePath) {
+std::string getFileContents(const std::string &filePath) {
     std::ifstream inFile(filePath);
     if(!inFile.is_open())
     {

@@ -4,7 +4,7 @@
 
 #include "Context.h"
 
-#include <GL/glew.h>
+#include <glad/glad.h>
 
 Context::Context()
 {
@@ -17,9 +17,8 @@ Context::Context()
 
     window.create({1280, 720}, "Minecraft", sf::Style::Close, settings);
 
-    glewInit();
-    glewExperimental = GL_TRUE;
-    glViewport(0, 0, 1280, 720);
+    // 使用glad初始化OpenGL
+    gladLoadGL();
 
     window.setFramerateLimit(60);
 }
