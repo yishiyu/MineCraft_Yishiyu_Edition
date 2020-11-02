@@ -1,5 +1,5 @@
 //
-// Created by Administrator on 2020/11/2.
+// Created by Yishiyu on 2020/11/2.
 //
 
 #ifndef MINECRAFT_YISHIYU_EDITION_ENTITY_H

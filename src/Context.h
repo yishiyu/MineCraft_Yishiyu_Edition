@@ -7,6 +7,9 @@
 
 #include <SFML/Graphics.hpp>
 
+// 应用的上下文类
+// 持有一个窗口对象
+// 在创建的同时会完成窗口上下文的设置和glad的初始化
 class Context {
 public:
     Context();

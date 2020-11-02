@@ -1,5 +1,5 @@
 //
-// Created by Administrator on 2020/11/1.
+// Created by Yishiyu on 2020/11/1.
 //
 
 #ifndef MINECRAFT_YISHIYU_EDITION_QUADRENDERER_H
@@ -14,6 +14,10 @@
 
 class Camera;
 
+// 四边形渲染类
+// 持有一个四边形模型,一个基础着色器,一个基础贴图
+// 1. 可以添加模型的渲染位置(世界坐标)
+// 2. 可以根据一个相机渲染出画面
 class QuadRenderer {
 public:
     QuadRenderer();

@@ -14,16 +14,19 @@
 #include "Context.h"
 #include "Camera.h"
 
+// 应用实例类
+//
 class Application {
 public:
     Application(std::string &&name);
 
     void runLoop();
 
+    // 接受一个左值对象,生成一个unique_ptr并存放到vector中
     template<typename T, typename... Args>
     void pushState(Args &&... args) {
         m_states.push_back(std::make_unique<T>(std::forward<Args>(args)...));
-        auto &s = m_states.back();
+        //auto &s = m_states.back();
     }
 
     void popState();

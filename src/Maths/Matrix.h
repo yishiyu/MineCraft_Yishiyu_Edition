@@ -12,12 +12,13 @@
 // 游戏相机类
 class Camera;
 
-// 生成视图矩阵
-glm::mat4 makeViewMatrix(const Camera& camera);
+// 生成模型矩阵(从局部空间转换到世界空间)
+glm::mat4 makeModelMatrix(const glm::vec3 &position, const glm::vec3 &rotation);
 
-// 生成投影矩阵
+// 生成视图矩阵(从世界空间转换到视图空间)
+glm::mat4 makeViewMatrix(const Camera &camera);
+
+// 生成投影矩阵(从视图空间转换到裁剪空间)
 glm::mat4 makeProjectionMatrix(float fov);
-
-glm::mat4 makeModelMatrix(const glm::vec3& position, const glm::vec3& rotation);
 
 #endif //MINECRAFT_YISHIYU_EDITION_MATRIX_H

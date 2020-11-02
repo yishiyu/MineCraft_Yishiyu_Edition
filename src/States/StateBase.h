@@ -1,5 +1,5 @@
 //
-// Created by Administrator on 2020/11/1.
+// Created by Yishiyu on 2020/11/1.
 //
 
 #ifndef MINECRAFT_YISHIYU_EDITION_STATEBASE_H
@@ -11,6 +11,13 @@ class RenderMaster;
 
 class Application;
 
+// State基类(虚类)
+// 一个State必须重载
+// 1. 处理SFML事件
+// 2. 处理输入
+// 3. 根据时间间隔更新状态
+// 4. 渲染画面
+// 同时一个State必须持有一个应用实例
 class StateBase {
 public:
     StateBase(Application &app)

@@ -1,5 +1,5 @@
 //
-// Created by Administrator on 2020/11/1.
+// Created by Yishiyu on 2020/11/1.
 //
 
 #include "BasicShader.h"
@@ -14,8 +14,7 @@ void BasicShader::loadProjectionViewMatrix(const glm::mat4 &pvMatrix) {
                 pvMatrix);
 }
 
-void BasicShader::loadModelMatrix(const glm::mat4& matrix)
-{
+void BasicShader::loadModelMatrix(const glm::mat4 &matrix) {
     loadMatrix4(m_locationModelMatrix, matrix);
 }
 
@@ -23,5 +22,5 @@ void BasicShader::loadModelMatrix(const glm::mat4& matrix)
 void BasicShader::getUniforms() {
     useProgram();
     m_locationProjectionViewMatrix = glGetUniformLocation(m_id, "projViewMatrix");
-    m_locationModelMatrix          = glGetUniformLocation(m_id, "modelMatrix");
+    m_locationModelMatrix = glGetUniformLocation(m_id, "modelMatrix");
 }

@@ -20,8 +20,6 @@ glm::mat4 makeModelMatrix(const glm::vec3 &position, const glm::vec3 &rotation) 
 }
 
 
-// 这里感觉可以直接用LookAt矩阵公式生成
-// 参考网址:https://learnopengl-cn.github.io/01%20Getting%20started/09%20Camera/
 glm::mat4 makeViewMatrix(const Camera &camera) {
     glm::mat4 matrix;
 

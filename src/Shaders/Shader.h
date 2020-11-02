@@ -1,5 +1,5 @@
 //
-// Created by Administrator on 2020/11/1.
+// Created by Yishiyu on 2020/11/1.
 //
 
 #ifndef MINECRAFT_YISHIYU_EDITION_SHADER_H
@@ -12,6 +12,8 @@
 
 #include "../Util/NonCopyable.h"
 
+// Shader基类,封装了加载shader,使用shader,向shader传送uniform数据
+// 每个Shader都对应了一个GPU中的Shader,故不可复制
 class Shader : NonCopyable {
 public:
     Shader(const std::string &vertexFile, const std::string &fragmentFile);

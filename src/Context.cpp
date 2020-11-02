@@ -6,8 +6,7 @@
 
 #include <glad/glad.h>
 
-Context::Context()
-{
+Context::Context() {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 0;
     settings.majorVersion = 3;
