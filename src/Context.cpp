@@ -18,6 +18,8 @@ Context::Context() {
 
     // 使用glad初始化OpenGL
     gladLoadGL();
+    // 剔除方块的反面
+    glCullFace(GL_BACK);
 
     window.setFramerateLimit(60);
     window.setMouseCursorVisible(false);

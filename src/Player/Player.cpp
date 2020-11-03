@@ -47,6 +47,12 @@ void Player::keyboardInput() {
         change.x += -glm::cos(glm::radians(rotation.y)) * speed;
         change.z += -glm::sin(glm::radians(rotation.y)) * speed;
     }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+        change.y += speed;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)){
+        change.y -= speed;
+    }
 
     // 当前的速度向量加上计算出的速度改变向量
     m_velocity += change;

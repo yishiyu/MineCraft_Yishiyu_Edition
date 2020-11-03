@@ -25,5 +25,13 @@ void StatePlaying::update(float deltaTime) {
 }
 
 void StatePlaying::render(RenderMaster &renderer) {
-    renderer.drawQuad({0, 0, 0});
+//    renderer.drawQuad({0, 0, 0});
+    renderer.drawCube({0, 0, 0});
+
+//    renderer.drawCube({2, 0, 0});
+
+//    renderer.drawCube({0, 2, 0});
+
+    renderer.drawCube({0, 0, 2});
+
 }

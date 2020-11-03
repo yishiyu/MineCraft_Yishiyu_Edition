@@ -7,7 +7,7 @@
 #include "Maths/Matrix.h"
 
 Camera::Camera() {
-    m_projectionMatrix = makeProjectionMatrix(90);
+    m_projectionMatrix = makeProjectionMatrix(45);
     position = {0, 0, -3.5};
 }
 
