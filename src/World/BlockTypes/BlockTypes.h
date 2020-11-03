@@ -1,0 +1,12 @@
+//
+// Created by Yishiyu on 2020/11/3.
+//
+
+#ifndef MINECRAFT_YISHIYU_EDITION_BLOCKTYPES_H
+#define MINECRAFT_YISHIYU_EDITION_BLOCKTYPES_H
+
+class BlockTypes {
+
+};
+
+#endif //MINECRAFT_YISHIYU_EDITION_BLOCKTYPES_H
