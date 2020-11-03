@@ -12,8 +12,10 @@
 // 游戏相机类
 class Camera;
 
+class Entity;
+
 // 生成模型矩阵(从局部空间转换到世界空间)
-glm::mat4 makeModelMatrix(const glm::vec3 &position, const glm::vec3 &rotation);
+glm::mat4 makeModelMatrix(const Entity &entity);
 
 // 生成视图矩阵(从世界空间转换到视图空间)
 glm::mat4 makeViewMatrix(const Camera &camera);

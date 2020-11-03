@@ -31,6 +31,10 @@ public:
 
     void popState();
 
+    Camera &getCamera() { return m_camera; }
+
+    const sf::RenderWindow &getWindow() const { return m_context.window; }
+
 private:
     void handleEvents();
 
