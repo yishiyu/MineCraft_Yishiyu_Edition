@@ -46,7 +46,7 @@ void QuadRenderer::renderQuads(const Camera &camera) {
 
     // 依次在每一个位置上渲染四边形
     for (auto &quad : m_quads) {
-        m_shader.loadModelMatrix(makeModelMatrix(quad, {0, 0, 0}));
+        m_shader.loadModelMatrix(makeModelMatrix({quad, {0, 0, 0}}));
         glDrawElements(GL_TRIANGLES, m_quadModel.getIndicesCount(), GL_UNSIGNED_INT, nullptr);
     }
 

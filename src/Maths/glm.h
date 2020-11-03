@@ -12,8 +12,9 @@
 #include <glm/gtc/type_ptr.hpp>
 
 // 常用的类型,和Hopson的保持一致
-using Vector2 = glm::vec2;
-using Vector3 = glm::vec3;
-using Matrix4 = glm::mat4;
+// 可以,但是没必要,而且也没用到...
+//using Vector2 = glm::vec2;
+//using Vector3 = glm::vec3;
+//using Matrix4 = glm::mat4;
 
 #endif //MINECRAFT_YISHIYU_EDITION_GLM_H

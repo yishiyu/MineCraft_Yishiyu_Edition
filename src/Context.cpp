@@ -20,4 +20,5 @@ Context::Context() {
     gladLoadGL();
 
     window.setFramerateLimit(60);
+    window.setMouseCursorVisible(false);
 }

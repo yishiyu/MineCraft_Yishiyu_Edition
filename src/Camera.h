@@ -6,17 +6,18 @@
 #define MINECRAFT_YISHIYU_EDITION_CAMERA_H
 
 #include "Maths/glm.h"
+#include "Entity.h"
 
 // 游戏相机类
-// 持有一个相机的世界坐标和一个旋转角度
+// 持有一个实体对象的指针,跟随这个实体运动和旋转
+// 同时自身也是实体类的子类,继承实体类的两个属性
 // 自身属性还有三个变换矩阵,可以通过update方法更新
-// 目前只能使用默认构造函数自带的默认属性,无法设置属性
-// 默认属性为坐标:(0,0,-5),旋转(0,0,0)
-class Camera {
+class Camera : public Entity {
 public:
     Camera();
 
     void update();
+    void hookEntity(const Entity &entity);
 
     const glm::mat4 &getViewMatrix() const noexcept;
 
@@ -24,17 +25,13 @@ public:
 
     const glm::mat4 &getProjectionViewMatrix() const noexcept;
 
-    const glm::vec3 &getPosition() const noexcept;
-
-    const glm::vec3 &getRotation() const noexcept;
 
 private:
-    glm::vec3 m_worldPosition;
-    glm::vec3 m_rotation;
+    const Entity *m_pEntity;
 
     glm::mat4 m_projectionMatrix;
     glm::mat4 m_viewMatrix;
-    glm::mat4 m_projViewMatrx;
+    glm::mat4 m_projViewMatrix;
 };
 
 #endif //MINECRAFT_YISHIYU_EDITION_CAMERA_H
