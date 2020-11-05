@@ -8,20 +8,24 @@
 #include "Util/NonCopyable.h"
 #include <SFML/Graphics.hpp>
 
-struct BlockDataHolder : public NonCopyable {
+// 方块渲染信息
+struct BlockRenderData : public NonCopyable {
     sf::Vector2i texTopCoord;
     sf::Vector2i texSideCoord;
     sf::Vector2i texBottomCoord;
 };
 
+// 方块信息
+// 1. 方块渲染信息
+// 封装了自动从给定文件名获取方块信息的构造函数
 class BlockData : public NonCopyable {
 public:
     BlockData(const std::string &fileName);
 
-    const BlockDataHolder &getBlockData() const;
+    const BlockRenderData &getBlockRenderData() const;
 
 private:
-    BlockDataHolder m_data;
+    BlockRenderData m_renderData;
 };
 
 

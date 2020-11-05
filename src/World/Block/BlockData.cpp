@@ -18,25 +18,25 @@ BlockData::BlockData(const std::string &fileName) {
         if (line == "TexTop") {
             int x, y;
             inFile >> x >> y;
-            m_data.texTopCoord = {x, y};
+            m_renderData.texTopCoord = {x, y};
         } else if (line == "TexSide") {
             int x, y;
             inFile >> x >> y;
-            m_data.texSideCoord = {x, y};
+            m_renderData.texSideCoord = {x, y};
         } else if (line == "TexBottom") {
             int x, y;
             inFile >> x >> y;
-            m_data.texBottomCoord = {x, y};
+            m_renderData.texBottomCoord = {x, y};
         } else if (line == "TexAll") {
             int x, y;
             inFile >> x >> y;
-            m_data.texTopCoord = {x, y};
-            m_data.texSideCoord = {x, y};
-            m_data.texBottomCoord = {x, y};
+            m_renderData.texTopCoord = {x, y};
+            m_renderData.texSideCoord = {x, y};
+            m_renderData.texBottomCoord = {x, y};
         }
     }
 }
 
-const BlockDataHolder &BlockData::getBlockData() const {
-    return m_data;
+const BlockRenderData &BlockData::getBlockRenderData() const {
+    return m_renderData;
 }
