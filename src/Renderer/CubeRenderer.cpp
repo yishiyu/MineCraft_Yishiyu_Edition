@@ -57,9 +57,6 @@ CubeRenderer::CubeRenderer()
     auto side = m_atlasTest.getTexture({1, 0});
     auto bottom = m_atlasTest.getTexture({2, 0});
 
-    for (auto t : top)
-        std::cout << t << std::endl;
-
     // 依次添加四周纹理,顶部纹理,底部纹理
     std::vector<GLfloat> texCoords;
     texCoords.insert(texCoords.end(), side.begin(), side.end());
@@ -91,7 +88,7 @@ CubeRenderer::CubeRenderer()
                     22, 23, 20
             };
 
-    m_cubeModel.addData(vertexCoords, texCoords, indices);
+    m_cubeModel.addData({vertexCoords, texCoords, indices});
 }
 
 void CubeRenderer::add(const glm::vec3 &position) {

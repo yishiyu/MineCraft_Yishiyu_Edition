@@ -29,7 +29,7 @@ add_executable(MineCraft_Yishiyu_Edition
         src/Shaders/Shader.cpp src/Shaders/Shader.h
         src/Shaders/ShaderLoader.cpp src/Shaders/ShaderLoader.h
         src/Renderer/RenderMaster.cpp src/Renderer/RenderMaster.h
-        src/Renderer/QuadRenderer.cpp src/Renderer/QuadRenderer.h src/Player/Player.h src/Entity.h src/Player/Player.cpp src/Renderer/CubeRenderer.cpp src/Renderer/CubeRenderer.h src/Texture/TextureAtlas.h src/World/WorldConstants.h src/World/BlockTypes/BlockTypes.h src/Texture/TextureAtlas.cpp src/World/BlockTypes/BlockId.h src/World/BlockTypes/BlockData.cpp src/World/BlockTypes/BlockData.h src/World/BlockTypes/ChunkBlock.cpp src/World/BlockTypes/ChunkBlock.h)
+        src/Renderer/QuadRenderer.cpp src/Renderer/QuadRenderer.h src/Player/Player.h src/Entity.h src/Player/Player.cpp src/Renderer/CubeRenderer.cpp src/Renderer/CubeRenderer.h src/Texture/TextureAtlas.h src/World/WorldConstants.h src/World/BlockTypes/BlockTypes.h src/Texture/TextureAtlas.cpp src/World/BlockTypes/BlockId.h src/World/BlockTypes/BlockData.cpp src/World/BlockTypes/BlockData.h src/World/BlockTypes/ChunkBlock.cpp src/World/BlockTypes/ChunkBlock.h src/Mesh.h)
 
 # 链接库文件
 if (CMAKE_BUILD_TYPE MATCHES "Release")

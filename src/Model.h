@@ -9,6 +9,7 @@
 #include <vector>
 
 #include "Util/NonCopyable.h"
+#include "Mesh.h"
 
 // 模型类,模型内部绑定的VAO,VBO,EBO属于系统资源,故不可复制
 // 保存了模型的顶点信息,贴图信息,下标信息
@@ -20,15 +21,11 @@ class Model : public NonCopyable {
 public:
     Model() = default;
 
-    Model(const std::vector<GLfloat> &vertexPositions,
-          const std::vector<GLfloat> &textureCoords,
-          const std::vector<GLuint> &indices);
+    Model(const Mesh &mesh);
 
     ~Model();
 
-    void addData(const std::vector<GLfloat> &vertexPositions,
-                 const std::vector<GLfloat> &textureCoords,
-                 const std::vector<GLuint> &indices);
+    void addData(const Mesh &mesh);
 
     void deleteData();
 
