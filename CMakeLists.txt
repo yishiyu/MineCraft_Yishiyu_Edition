@@ -20,7 +20,7 @@ add_executable(MineCraft_Yishiyu_Edition
         src/Util/NonCopyable.h src/Util/Singleton.h
         src/Util/Random.cpp src/Util/Random.h
         src/Util/FileUtil.cpp src/Util/FileUtil.h
-        src/Model.cpp src/Model.h
+        src/Model/Model.cpp src/Model/Model.h
         src/Camera.cpp src/Camera.h
         src/Application.cpp src/Application.h
         src/Texture/BasicTexture.cpp src/Texture/BasicTexture.h
@@ -29,7 +29,7 @@ add_executable(MineCraft_Yishiyu_Edition
         src/Shaders/Shader.cpp src/Shaders/Shader.h
         src/Shaders/ShaderLoader.cpp src/Shaders/ShaderLoader.h
         src/Renderer/RenderMaster.cpp src/Renderer/RenderMaster.h
-        src/Renderer/QuadRenderer.cpp src/Renderer/QuadRenderer.h src/Player/Player.h src/Entity.h src/Player/Player.cpp src/Renderer/CubeRenderer.cpp src/Renderer/CubeRenderer.h src/Texture/TextureAtlas.h src/World/WorldConstants.h src/World/Block/BlockType.h src/Texture/TextureAtlas.cpp src/World/Block/BlockDict.h src/World/Block/BlockData.cpp src/World/Block/BlockData.h src/World/Block/Block.cpp src/World/Block/Block.h src/Mesh.h src/World/Block/BlockDB.cpp src/World/Block/BlockDB.h src/World/Block/BlockType.cpp)
+        src/Renderer/QuadRenderer.cpp src/Renderer/QuadRenderer.h src/Player/Player.h src/Entity.h src/Player/Player.cpp src/Renderer/CubeRenderer.cpp src/Renderer/CubeRenderer.h src/Texture/TextureAtlas.h src/World/WorldConstants.h src/World/Block/BlockType.h src/Texture/TextureAtlas.cpp src/World/Block/BlockDict.h src/World/Block/BlockData.cpp src/World/Block/BlockData.h src/World/Block/Block.cpp src/World/Block/Block.h src/Mesh.h src/World/Block/BlockDB.cpp src/World/Block/BlockDB.h src/World/Block/BlockType.cpp src/Shaders/SectionShader.cpp src/Shaders/SectionShader.h src/Renderer/SectionRenderer.cpp src/Renderer/SectionRenderer.h src/Model/SectionModel.cpp src/Model/SectionModel.h)
 
 # 链接库文件
 if (CMAKE_BUILD_TYPE MATCHES "Release")

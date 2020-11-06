@@ -6,7 +6,7 @@
 #define MINECRAFT_YISHIYU_EDITION_CUBERENDERER_H
 
 #include <vector>
-#include "../Model.h"
+#include "src/Model/Model.h"
 #include "../Maths/glm.h"
 #include "../Shaders/BasicShader.h"
 #include "../Texture/BasicTexture.h"
