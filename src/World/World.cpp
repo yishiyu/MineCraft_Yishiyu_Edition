@@ -14,11 +14,19 @@ World::World() {
         }
     }
 
-    int i=0;
     for (auto &chunk:m_chunks) {
         chunk.makeModels();
-        if(++i==10) break;
-        //TODO:在渲染到下标为240的区块时会触发vector越界异常,需要排除一下
+        // 找到错误原因了:Chunk 会调用 World::getBlock 来获取自身以外方块的信息
+        // 之前的 World::getBlock 中判定越界的表达式错了,导致会查看不存在区块的方块而不是直接返回 BlockDict::Air
+        // 把原本的    if (cX < 0 || cX > WORLD_SIZE ||
+        //               cZ < 0 || cZ > WORLD_SIZE) {
+        //               return BlockDict::Air;
+        //            }
+        // 改为       if (cX < 0 || cX >= WORLD_SIZE ||
+        //               cZ < 0 || cZ >= WORLD_SIZE) {
+        //               return BlockDict::Air;
+        //            }
+        // 轻松解决问题...
     }
 }
 
@@ -33,8 +41,8 @@ Block World::getBlock(int x, int y, int z) const {
     int cX = x / SECTION_SIZE;
     int cZ = z / SECTION_SIZE;
 
-    if (cX < 0 || cX > WORLD_SIZE ||
-        cZ < 0 || cZ > WORLD_SIZE) {
+    if (cX < 0 || cX >= WORLD_SIZE ||
+        cZ < 0 || cZ >= WORLD_SIZE) {
         return BlockDict::Air;
     }
 

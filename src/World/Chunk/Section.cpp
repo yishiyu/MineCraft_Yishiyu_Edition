@@ -9,7 +9,7 @@
 Section::Section(const sf::Vector3i &location, World &world)
         : m_location(location), m_pWorld(&world) {
     for(auto &block : m_blocks){
-        block = Block(BlockDict::Grass);
+        block = Block(BlockDict::Stone);
     }
 }
 

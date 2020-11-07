@@ -11,7 +11,7 @@ constexpr int SECTION_AREA = SECTION_SIZE * SECTION_SIZE;
 constexpr int SECTION_VOLUME = SECTION_SIZE * SECTION_SIZE * SECTION_SIZE;
 
 // 世界中大区块的数量
-constexpr int WORLD_SIZE = 16;
+constexpr int WORLD_SIZE = 2;
 
 
 #endif //MINECRAFT_YISHIYU_EDITION_WORLDCONSTANTS_H

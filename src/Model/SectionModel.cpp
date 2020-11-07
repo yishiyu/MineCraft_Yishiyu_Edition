@@ -27,7 +27,7 @@ void SectionModel::addFace(const std::vector<GLfloat> &blockFace, const std::vec
     auto &m_indices = m_mesh.indices;
 
     // 添加纹理下标序列
-    m_textureCoords.insert(m_textureCoords.end(), textureCoords.begin(), textureCoords.begin());
+    m_textureCoords.insert(m_textureCoords.end(), textureCoords.begin(), textureCoords.end());
 
     // 添加顶点序列(世界坐标)(三维 * 四个点 = 12个数据)
     // i : 四个点
