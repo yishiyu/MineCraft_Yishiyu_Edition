@@ -36,7 +36,7 @@ void BasicTexture::loadFromImage(const sf::Image &image) {
 void BasicTexture::loadFromFile(const std::string &file) {
     // 用来读取图片的对象,在函数结束后回释放图片占用的内存
     sf::Image i;
-    if (!i.loadFromFile("../Res/Textures/" + file + ".png")) {
+    if (!i.loadFromFile("../../../Res/Textures/" + file + ".png")) {
         throw std::runtime_error(
                 std::string(__FILE__) + std::string(__FUNCTION__) + "Unable to open image: " + file);
     }

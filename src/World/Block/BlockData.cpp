@@ -7,7 +7,7 @@
 #include <fstream>
 
 BlockData::BlockData(const std::string &fileName) {
-    std::ifstream inFile("../Res/Blocks/" + fileName + ".block");
+    std::ifstream inFile("../../../Res/Blocks/" + fileName + ".block");
 
     if (!inFile.is_open()) {
         throw std::runtime_error("Unable to open block file: " + fileName + "!");

@@ -34,14 +34,13 @@ add_executable(MineCraft_Yishiyu_Edition
 # 链接库文件
 if (CMAKE_BUILD_TYPE MATCHES "Release")
     MESSAGE(STATUS "Release Edition")
-
     target_link_libraries(
             MineCraft_Yishiyu_Edition
-            libsfml-audio.a
-            libsfml-graphics.a
-            libsfml-network.a
-            libsfml-system.a
-            libsfml-window.a
+            sfml-audio.lib
+            sfml-graphics.lib
+            sfml-network.lib
+            sfml-system.lib
+            sfml-window.lib
     )
 
 
@@ -49,11 +48,11 @@ elseif (CMAKE_BUILD_TYPE MATCHES "Debug")
     MESSAGE(STATUS "Debug Edition")
     target_link_libraries(
             MineCraft_Yishiyu_Edition
-            libsfml-audio-d.a
-            libsfml-graphics-d.a
-            libsfml-network-d.a
-            libsfml-system-d.a
-            libsfml-window-d.a
+            sfml-audio-d.lib
+            sfml-graphics-d.lib
+            sfml-network-d.lib
+            sfml-system-d.lib
+            sfml-window-d.lib
     )
 
 else ()

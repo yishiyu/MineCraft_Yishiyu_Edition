@@ -6,7 +6,7 @@
 
 TextureAtlas::TextureAtlas(const std::string &textureFileName) {
     sf::Image i;
-    if (!i.loadFromFile("../Res/Textures/" + textureFileName + ".png")) {
+    if (!i.loadFromFile("../../../Res/Textures/" + textureFileName + ".png")) {
         throw std::runtime_error(
                 std::string(__FILE__) + std::string(__FUNCTION__) + "Unable to open image: " + textureFileName);
     }
