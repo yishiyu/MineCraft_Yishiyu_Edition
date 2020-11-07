@@ -6,7 +6,8 @@
 #define MINECRAFT_YISHIYU_EDITION_STATEPLAYING_H
 
 #include "StateBase.h"
-#include "../Player/Player.h"
+#include "Player/Player.h"
+#include "World/World.h"
 
 // 游戏状态,继承自状态基类
 // 持有一个Player对象
@@ -15,16 +16,17 @@ class StatePlaying : public StateBase {
 public:
     StatePlaying(Application &app);
 
-    void handleEvent(sf::Event e);
+    void handleEvent(sf::Event e) override;
 
-    void handleInput();
+    void handleInput() override;
 
-    void update(float deltaTime);
+    void update(float deltaTime) override;
 
-    void render(RenderMaster &renderer);
+    void render(RenderMaster &renderer) override;
 
 private:
     Player m_player;
+    World m_world;
 };
 
 #endif //MINECRAFT_YISHIYU_EDITION_STATEPLAYING_H

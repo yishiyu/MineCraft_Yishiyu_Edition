@@ -33,5 +33,5 @@ void StatePlaying::render(RenderMaster &renderer) {
 //    renderer.drawCube({0, 2, 0});
 
     renderer.drawCube({0, 0, 2});
-
+    m_world.renderWorld(renderer);
 }
