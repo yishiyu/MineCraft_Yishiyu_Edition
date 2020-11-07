@@ -22,6 +22,7 @@ public:
     Model() = default;
 
     Model(const Mesh &mesh);
+    Model(Model &&model) noexcept;
 
     ~Model();
 

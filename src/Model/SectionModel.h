@@ -12,6 +12,7 @@
 class SectionModel : public Model {
 public:
     SectionModel();
+    SectionModel(SectionModel &&sectionModel) noexcept;
 
     // 为小区块模型添加一个面
     //

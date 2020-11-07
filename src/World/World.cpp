@@ -4,6 +4,7 @@
 
 #include "World.h"
 #include "WorldConstants.h"
+#include <iostream>
 
 
 World::World() {
@@ -12,8 +13,12 @@ World::World() {
             m_chunks.emplace_back(*this, sf::Vector2i(x, z));
         }
     }
+
+    int i=0;
     for (auto &chunk:m_chunks) {
         chunk.makeModels();
+        if(++i==10) break;
+        //TODO:在渲染到下标为240的区块时会触发vector越界异常,需要排除一下
     }
 }
 
@@ -41,3 +46,4 @@ void World::renderWorld(RenderMaster &renderMaster) {
         chunk.drawChunk(renderMaster);
     }
 }
+

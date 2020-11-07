@@ -83,14 +83,13 @@ SectionModelBuilder::SectionModelBuilder(Section &section)
 }
 
 void SectionModelBuilder::buildModel(SectionModel &model) {
-    sf::Clock c;
     m_pSectionModel = &model;
 
     AdjacentBlockPositions directions;
 
     // 对小区块中的所有方块操作
-    for (int8_t y = 0; y < SECTION_SIZE; ++y)
-        for (int8_t x = 0; x < SECTION_SIZE; ++x)
+    for (int8_t y = 0; y < SECTION_SIZE; ++y){
+        for (int8_t x = 0; x < SECTION_SIZE; ++x){
             for (int8_t z = 0; z < SECTION_SIZE; ++z) {
                 sf::Vector3i position(x, y, z);
                 Block block = m_pSection->getBlock(x, y, z);
@@ -115,6 +114,10 @@ void SectionModelBuilder::buildModel(SectionModel &model) {
                 tryAddFaceToMesh(frontFace, data.texSideCoord, position, directions.front);
                 tryAddFaceToMesh(backFace, data.texSideCoord, position, directions.back);
             }
+        }
+    }
+
+
 }
 
 void SectionModelBuilder::tryAddFaceToMesh(const std::vector<GLfloat> &blockFace, const sf::Vector2i &textureCoords,

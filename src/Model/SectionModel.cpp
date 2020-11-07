@@ -10,6 +10,15 @@ SectionModel::SectionModel() {
 
 }
 
+SectionModel::SectionModel(SectionModel &&sectionModel) noexcept
+    :Model(std::move((Model&)sectionModel)){
+    // 显式调用基类的移动构造函数
+    // 处理自身数据
+    m_mesh = sectionModel.m_mesh;
+    m_indicesIndex = sectionModel.m_indicesIndex;
+}
+
+
 void SectionModel::addFace(const std::vector<GLfloat> &blockFace, const std::vector<GLfloat> &textureCoords,
                            const sf::Vector3i &sectionPosition, const sf::Vector3i &blockPosition) {
 

@@ -4,6 +4,7 @@
 
 #include "Chunk.h"
 #include "SectionModelBuilder.h"
+#include <iostream>
 
 Chunk::Chunk(World &world, const sf::Vector2i &location)
         : m_location(location), m_pWorld(&world) {
@@ -14,8 +15,12 @@ Chunk::Chunk(World &world, const sf::Vector2i &location)
 }
 
 void Chunk::makeModels() {
+    static int i=0;
     for (auto &section : m_sections) {
-        SectionModelBuilder(section).buildModel(section.m_sectionModel);
+        ++i;
+        auto builder = SectionModelBuilder(section);
+        builder.buildModel(section.m_sectionModel);
+        section.m_sectionModel.bufferMesh();
     }
 }
 

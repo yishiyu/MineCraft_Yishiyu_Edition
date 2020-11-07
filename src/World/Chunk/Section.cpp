@@ -8,6 +8,21 @@
 
 Section::Section(const sf::Vector3i &location, World &world)
         : m_location(location), m_pWorld(&world) {
+    for(auto &block : m_blocks){
+        block = Block(BlockDict::Grass);
+    }
+}
+
+Section::Section(Section &&section) noexcept
+    :m_sectionModel(std::move(section.m_sectionModel)){
+    // 显式调用SectionModel的移动构造函数
+    // 指针直接复制
+    m_pWorld = section.m_pWorld;
+    // array交换两个section对象的内容
+    m_blocks.swap(section.m_blocks);
+    // 三维向量直接复制
+    m_location = section.m_location;
+    // model对象现在已经可以析构了
 }
 
 void Section::setBlock(int x, int y, int z, Block block) {
@@ -45,7 +60,7 @@ sf::Vector3i Section::toWorldPosition(int x, int y, int z) const {
             m_location.x * SECTION_SIZE + x,
             m_location.y * SECTION_SIZE + y,
             m_location.z * SECTION_SIZE + z
-    }
+    };
 }
 
 bool Section::outOfBounds(int value) {
@@ -59,3 +74,4 @@ int Section::getIndex(int x, int y, int z) {
            z * SECTION_SIZE +
            x;
 }
+

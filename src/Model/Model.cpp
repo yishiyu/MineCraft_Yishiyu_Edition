@@ -8,6 +8,18 @@ Model::Model(const Mesh &mesh) {
     addData(mesh);
 }
 
+Model::Model(Model &&model) noexcept {
+    // 转移对象数据
+    m_vao = model.m_vao;
+    m_vboCount = model.m_vboCount;
+    m_indicesCount = model.m_indicesCount;
+    m_buffers.swap(model.m_buffers);
+    // 使对象可以安全析构
+    m_vao = 0;
+    m_vboCount=0;
+    m_indicesCount = 0;
+}
+
 Model::~Model() {
     deleteData();
 }
@@ -79,4 +91,3 @@ void Model::deleteData() {
 int Model::getIndicesCount() const {
     return m_indicesCount;
 }
-

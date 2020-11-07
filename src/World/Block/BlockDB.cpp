@@ -5,7 +5,7 @@
 #include "BlockDB.h"
 
 // 加载材质图集
-BlockDB::BlockDB() : textureAtlas("DefaultPack.png") {
+BlockDB::BlockDB() : textureAtlas("DefaultPack") {
     // 依次加载所有方块(按道理来说应该是从配置文件中读取的)
     m_blockPrototypes[(int) BlockDict::Air] = std::make_unique<BlockPrototype>("Air");
     m_blockPrototypes[(int) BlockDict::Grass] = std::make_unique<BlockPrototype>("Grass");

@@ -47,7 +47,6 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
 
 elseif (CMAKE_BUILD_TYPE MATCHES "Debug")
     MESSAGE(STATUS "Debug Edition")
-
     target_link_libraries(
             MineCraft_Yishiyu_Edition
             libsfml-audio-d.a

@@ -19,6 +19,7 @@ class Section : public IChunk {
 
 public:
     Section(const sf::Vector3i &location, World &world);
+    Section(Section&& section) noexcept;
 
     void setBlock(int x, int y, int z, Block block)override;
 
