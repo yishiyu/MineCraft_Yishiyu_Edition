@@ -32,8 +32,6 @@ void Model::addData(const Mesh &mesh) {
     if (m_vao != 0)
         deleteData();
 
-    m_indicesCount = mesh.indices.size();
-
     glGenVertexArrays(1, &m_vao);
     glBindVertexArray(m_vao);
 
@@ -63,8 +61,6 @@ void Model::addVBO(int dimensions, const std::vector<GLfloat> &data) {
     m_buffers.push_back(vbo);
 }
 
-// 很奇怪,为什么把EBO保存到缓存vector中?
-// 删除缓存的时候应该是也要删除EBO的,可能是大佬忘记写了吧
 void Model::addEBO(const std::vector<GLuint> &indices) {
     GLuint ebo;
     glGenBuffers(1, &ebo);
@@ -73,7 +69,8 @@ void Model::addEBO(const std::vector<GLuint> &indices) {
                  indices.size() * sizeof(GLuint),
                  indices.data(),
                  GL_STATIC_DRAW);
-    //TODO: Add the EBO to m_buffers
+    m_indicesCount += indices.size();
+    m_buffers.push_back(ebo);
 }
 
 void Model::deleteData() {

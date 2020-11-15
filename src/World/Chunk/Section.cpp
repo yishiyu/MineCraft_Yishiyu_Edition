@@ -36,6 +36,7 @@ void Section::setBlock(int x, int y, int z, Block block) {
     }
     // 设置自身方块
     m_blocks[getIndex(x, y, z)] = block;
+    m_hasMesh = false;
 }
 
 Block Section::getBlock(int x, int y, int z) const {
@@ -52,6 +53,10 @@ Block Section::getBlock(int x, int y, int z) const {
 
 const sf::Vector3i Section::getLocation() const noexcept {
     return m_location;
+}
+
+bool Section::hasMesh() const noexcept{
+    return m_hasMesh;
 }
 
 sf::Vector3i Section::toWorldPosition(int x, int y, int z) const {

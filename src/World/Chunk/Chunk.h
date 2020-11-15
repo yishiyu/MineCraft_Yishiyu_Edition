@@ -27,6 +27,8 @@ private:
     std::vector<Section> m_sections;
     sf::Vector2i  m_location;
     World* m_pWorld;
+
+    bool m_isLoaded = false;
 };
 
 

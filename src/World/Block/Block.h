@@ -31,6 +31,10 @@ public:
         return another.id == this->id;
     }
 
+    bool operator!=(const Block& another) {
+        return another.id != this->id;
+    }
+
     Block_t id = 0;
 };
 

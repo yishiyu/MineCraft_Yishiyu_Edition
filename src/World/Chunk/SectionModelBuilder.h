@@ -9,9 +9,9 @@
 
 class SectionModelBuilder {
 public:
-    SectionModelBuilder(Section &section);
+    SectionModelBuilder(Section &section, SectionModel& model);
 
-    void buildModel(SectionModel &model);
+    void buildModel();
 
 private:
     void tryAddFaceToMesh(const std::vector<GLfloat> &blockFace,
