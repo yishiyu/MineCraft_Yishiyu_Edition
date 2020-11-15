@@ -15,12 +15,14 @@ Chunk::Chunk(World &world, const sf::Vector2i &location)
 }
 
 void Chunk::makeModels() {
-    static int i=0;
+
     for (auto &section : m_sections) {
-        ++i;
-        auto builder = SectionModelBuilder(section, section.m_sectionModel);
-        builder.buildModel();
-        section.m_sectionModel.bufferMesh();
+        if (!section.hasMesh()) {
+            auto builder = SectionModelBuilder(section, section.m_sectionModel);
+            builder.buildModel();
+            section.m_sectionModel.bufferMesh();
+            section.m_hasMesh = true;
+        }
     }
 }
 
@@ -47,7 +49,9 @@ Block Chunk::getBlock(int x, int y, int z) const {
 
 void Chunk::drawChunk(RenderMaster &renderer) {
     for(auto &section : m_sections){
-        renderer.drawSection(section.m_sectionModel);
+        if (section.hasMesh()) {
+            renderer.drawSection(section.m_sectionModel);
+        }
     }
 }
 
