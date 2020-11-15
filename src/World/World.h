@@ -17,10 +17,13 @@ public:
 
     Block getBlock(int x, int y, int z) const override;
 
-    void renderWorld(RenderMaster &renderMaster);
+    void editBlock(int x, int y, int z, Block block);
 
+    void renderWorld(RenderMaster &renderMaster);
+    void addChunk(int x, int z);
 private:
     std::vector<Chunk> m_chunks;
+    std::vector<Chunk*> m_changedChunks;
 };
 
 
