@@ -26,6 +26,7 @@ public:
     Block getBlock(int x, int y, int z) const override;
 
     const sf::Vector3i getLocation() const noexcept;
+    bool hasMesh() const noexcept;
 
 private:
     sf::Vector3i toWorldPosition(int x, int y, int z) const;
@@ -38,6 +39,9 @@ private:
     SectionModel m_sectionModel;
     sf::Vector3i m_location;
     World *m_pWorld;
+
+    // 是否Build成了模型,减少重复Build的次数
+    bool m_hasMesh = false;
 };
 
 

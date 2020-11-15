@@ -54,6 +54,10 @@ const sf::Vector3i Section::getLocation() const noexcept {
     return m_location;
 }
 
+bool Section::hasMesh() const noexcept{
+    return m_hasMesh;
+}
+
 sf::Vector3i Section::toWorldPosition(int x, int y, int z) const {
     // 把当前小区块的相对坐标转换为世界坐标
     return {
