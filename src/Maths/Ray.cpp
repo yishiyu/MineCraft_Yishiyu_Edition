@@ -18,9 +18,9 @@ void Ray::step(float scale){
 
 	auto& p = m_rayEnd;
 
-	p.x -= glm::cos(yaw) * scale;
-	p.z -= glm::sin(yaw) * scale;
-	p.y -= glm::tan(pitch) * scale;
+	p.x += glm::cos(pitch) * glm::cos(yaw) * scale;
+	p.z += glm::cos(pitch) * glm::sin(yaw) * scale;
+	p.y -= glm::sin(pitch) * scale;
 }
 
 const glm::vec3& Ray::getEnd() const{

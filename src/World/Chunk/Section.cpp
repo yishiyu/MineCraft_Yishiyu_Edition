@@ -36,6 +36,7 @@ void Section::setBlock(int x, int y, int z, Block block) {
     }
     // 设置自身方块
     m_blocks[getIndex(x, y, z)] = block;
+    m_hasMesh = false;
 }
 
 Block Section::getBlock(int x, int y, int z) const {
