@@ -18,8 +18,8 @@ void Chunk::makeModels() {
     static int i=0;
     for (auto &section : m_sections) {
         ++i;
-        auto builder = SectionModelBuilder(section);
-        builder.buildModel(section.m_sectionModel);
+        auto builder = SectionModelBuilder(section, section.m_sectionModel);
+        builder.buildModel();
         section.m_sectionModel.bufferMesh();
     }
 }

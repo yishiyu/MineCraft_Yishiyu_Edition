@@ -77,13 +77,13 @@ public:
 };
 
 
-SectionModelBuilder::SectionModelBuilder(Section &section)
-        : m_pSection(&section) {
+SectionModelBuilder::SectionModelBuilder(Section &section, SectionModel& model)
+        : m_pSection(&section),
+          m_pSectionModel(&model){
 
 }
 
-void SectionModelBuilder::buildModel(SectionModel &model) {
-    m_pSectionModel = &model;
+void SectionModelBuilder::buildModel() {
 
     AdjacentBlockPositions directions;
 
