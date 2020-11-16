@@ -9,6 +9,12 @@
 #include "Player/Player.h"
 #include "World/World.h"
 
+enum Events {
+    NONE_EVENT,
+    MOUSE_LEFT_DOWN,
+    MOUSE_RIGHT_DOWN,
+};
+
 // 游戏状态,继承自状态基类
 // 持有一个Player对象
 // 在初始化的时候设置Application对象的Camera对象跟随Player对象(Entity子类)

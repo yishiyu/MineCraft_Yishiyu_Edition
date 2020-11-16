@@ -20,6 +20,21 @@ void StatePlaying::handleEvent(sf::Event e) {
 void StatePlaying::handleInput() {
     m_player.handleInput(m_pApplication->getWindow());
 
+    int events = Events::NONE_EVENT;
+
+    // 左键按下,移除方块,结束处理
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+        events = Events::MOUSE_LEFT_DOWN;
+    }
+    // 右键按下,放置方块,结束处理
+    else if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
+        events = Events::MOUSE_RIGHT_DOWN;
+    }
+    // 
+    else {
+        return;
+    }
+
     static sf::Clock timer;
     glm::vec3 lastPosition;
 
@@ -37,20 +52,23 @@ void StatePlaying::handleInput() {
         if (block != 0){
             // 冷却时间0.2s
             if (timer.getElapsedTime().asSeconds() > 0.2){
-                // 左键按下,移除方块,结束处理
-                if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+
+                // 处理事件
+                switch (events){
+                case Events::MOUSE_LEFT_DOWN:
                     timer.restart();
                     m_world.editBlock(x, y, z, 0);
                     break;
-                }
-                // 右键按下,放置方块,结束处理
-                else if (sf::Mouse::isButtonPressed(sf::Mouse::Right)){
+                case Events::MOUSE_RIGHT_DOWN:
                     timer.restart();
                     m_world.editBlock(lastPosition.x,
                         lastPosition.y,
                         lastPosition.z, 1);
                     break;
+                default:
+                    break;
                 }
+                break;
             }
         }
         // 记录最后一个空气方块
