@@ -5,6 +5,7 @@
 #include "Application.h"
 
 #include "States/StatePlaying.h"
+#include <iostream>
 
 
 Application::Application(std::string &&name) {
@@ -15,6 +16,8 @@ Application::Application(std::string &&name) {
 
 void Application::runLoop() {
     sf::Clock dtTimer;
+    static int time = 0;
+    static int frame = 0;
 
     while (m_context.window.isOpen() && !m_states.empty()) {
         // 获取自上一次定时器归零后的deltaTime并把定时器归零
@@ -32,6 +35,15 @@ void Application::runLoop() {
         if (m_isPopState) {
             m_isPopState = false;
             m_states.pop_back();
+        }
+
+        frame++;
+        time += deltaTime.asMilliseconds();
+        if (time>1000) {
+            int fps = frame * 1000 / time;
+            std::cout << "FPS:" << (fps) << std::endl;
+            frame = 0;
+            time = 0;
         }
     }
 }
