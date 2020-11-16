@@ -17,7 +17,7 @@ void SectionRenderer::render(const Camera &camera) {
 
     m_sectionShader.loadProjectionViewMatrix(camera.getProjectionViewMatrix());
     for(auto model : m_sectionModels){
-        model->bindVAO();
+        model->bindData();
         glDrawElements(GL_TRIANGLES, model->getIndicesCount(), GL_UNSIGNED_INT, nullptr);
     }
 }
