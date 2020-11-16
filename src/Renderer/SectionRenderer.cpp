@@ -16,8 +16,10 @@ void SectionRenderer::render(const Camera &camera) {
     BlockDB::get().textureAtlas.bindTexture();
 
     m_sectionShader.loadProjectionViewMatrix(camera.getProjectionViewMatrix());
-    for(auto model : m_sectionModels){
+    for(auto &model : m_sectionModels){
         model->bindData();
         glDrawElements(GL_TRIANGLES, model->getIndicesCount(), GL_UNSIGNED_INT, nullptr);
     }
+
+    m_sectionModels.clear();
 }
